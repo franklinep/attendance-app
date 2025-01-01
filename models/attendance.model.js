@@ -5,18 +5,17 @@ module.exports = mongoose => {
         laboratoryId: { type: mongoose.Schema.Types.ObjectId, ref: "laboratory", required: true },
         type: { type: String, enum: ["check-in", "check-out"], required: true },
         method: { type: String, enum: ["qr", "manual"], required: true },
-        date: { type: Date, required: true },
-        time: { type: String, required: true },
+        date: { type: Date, required: true }
       },
       { timestamps: true }
     );
-  
+    /* overwirte toJSON function for objectid = _id
     schema.method("toJSON", function () {
       const { __v, _id, ...object } = this.toObject();
       object.id = _id;
       return object;
     });
-  
+    */
     const Attendance = mongoose.model("attendance", schema);
     return Attendance;
   };

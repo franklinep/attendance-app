@@ -5,7 +5,7 @@ module.exports = mongoose => {
             email: { type: String, required: true, unique: true, lowercase: true },
             phone: { type: String, required: true, unique: true },
             isActive: { type: Boolean, default: true },
-            role: { type: String, enum: ['student', 'professor', 'admin'], default: 'student' },
+            role: { type: String, enum: ['student', 'professor', 'coordinator'], default: 'student' },
             pictureURL: { type: String},
         },
         { timestamps: true }

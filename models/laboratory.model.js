@@ -2,7 +2,7 @@ module.exports = mongoose => {
     var schema = mongoose.Schema(
       {
         name: { type: String, required: true, trim: true },
-        capacity: { type: Number, required: true, min: 1 }
+        capacity: { type: Number, min: 1 }
       },
       { timestamps: true }
     );
